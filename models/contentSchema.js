@@ -10,8 +10,8 @@ const contentSchema = new mongoose.Schema({
     description: {
         type: String,
         required: [true, "please provide the post description"],
-        minLength: [10, "Post description must contain atleast 60 characters"],
-        maxLength: [30, "Post description must conatin atleast 300 characters"], 
+        minLength: [10, "Post description must contain atleast 6 characters"],
+        maxLength: [30, "Post description must conatin atleast 10 characters"], 
     },
     category: {
         type: String,

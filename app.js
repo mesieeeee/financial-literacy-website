@@ -8,7 +8,7 @@ import { isAuthenticated } from "./middlewares/auth.js";
 import { catchAsyncError } from "./middlewares/catchAsyncError.js";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload"; 
-
+import commentRouter from "./routes/commentRouter.js";
 const app= express()
 dotenv.config({path: "./config/config.env"});
 
@@ -26,7 +26,7 @@ app.use(fileUpload({
 }))
 
 app.use('/api/v1/content', contentRouter);
-
+app.use('/api/v1/comment', commentRouter);
 dbConnection();
 
 app.use(errorMiddleware)
